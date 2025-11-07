@@ -13,4 +13,4 @@ All the rules of NYT Wordle apply here.
 Correct letters in wrong spot will be marked yellow, correct letters in correct spot will be marked green.
 
 
-Possible wordles and acceptable answers in wordles.json and nonwordles.json. JSON files by stuartpb: [text](https://github.com/stuartpb/wordles/tree/main)
+Possible wordles and acceptable answers in wordles.json and nonwordles.json. JSON files by stuartpb: [GitHub Repository](https://github.com/stuartpb/wordles/tree/main)
