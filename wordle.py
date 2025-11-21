@@ -148,6 +148,7 @@ class Wordle:
                             break
         if greencount >= 5:
             self.gameover()
+            key["background"] = "#08A400"
         self.row += 1
         if self.row > 5:
             self.gameover()
@@ -156,7 +157,6 @@ class Wordle:
     def gameover(self):
         for key in self.keys:
             key["state"] = tk.DISABLED
-            key["background"] = "#08A400"
     
     def backspace(self):
         if self.row_letters != []:
