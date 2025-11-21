@@ -83,7 +83,9 @@ class Wordle:
         self.window.bind("<BackSpace>", lambda x: btn_back.invoke())
 
     def randomword(self):
-        return random.choice(self.wordles)
+        word = random.choice(self.wordles)
+        print(word)
+        return word
     
     def init_game(self):
         for key in self.keys:
@@ -110,7 +112,6 @@ class Wordle:
             self.letterspaces[self.row][len(self.row_letters)]["background"] = "#212121"
 
     def check(self):
-        print(self.currentword)
         if len(self.row_letters) < 5:
             return
         if "".join(self.row_letters) not in self.nonwordles and "".join(self.row_letters) not in self.wordles:
