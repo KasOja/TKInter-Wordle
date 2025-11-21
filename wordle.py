@@ -147,6 +147,7 @@ class Wordle:
                     for space in reversed(self.letterspaces[self.row]):
                         if space["text"].lower() == letter and space["background"] =="#7B8200":
                             space["background"] = "#3E3E3E"
+                            extras -= 1
                             break
         if greencount >= 5:
             self.gameover()
