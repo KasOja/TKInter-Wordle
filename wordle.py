@@ -148,7 +148,8 @@ class Wordle:
                             break
         if greencount >= 5:
             self.gameover()
-            key["background"] = "#08A400"
+            for key in self.keys:
+                key["background"] = "#08A400"
         self.row += 1
         if self.row > 5:
             self.gameover()
