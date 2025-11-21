@@ -11,6 +11,7 @@ class Wordle:
             self.nonwordles = json.load(wordfile)
         self.guielements()
         self.init_game()
+        self.game_over = False
         self.window.mainloop()
 
     def guielements(self):
@@ -88,6 +89,7 @@ class Wordle:
         return word
     
     def init_game(self):
+        self.game_over = False
         for key in self.keys:
             key["state"] = tk.NORMAL
             key["background"] = "#959595"
@@ -112,6 +114,8 @@ class Wordle:
             self.letterspaces[self.row][len(self.row_letters)]["background"] = "#212121"
 
     def check(self):
+        if self.game_over == True:
+            self.init_game()
         if len(self.row_letters) < 5:
             return
         if "".join(self.row_letters) not in self.nonwordles and "".join(self.row_letters) not in self.wordles:
@@ -157,8 +161,9 @@ class Wordle:
         self.row_letters = []
 
     def gameover(self):
-        for key in self.keys:
+        for key in self.keys[:-1]:
             key["state"] = tk.DISABLED
+        self.game_over = True
     
     def backspace(self):
         if self.row_letters != []:
